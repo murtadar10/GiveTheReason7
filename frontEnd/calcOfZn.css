@@ -1,0 +1,239 @@
+#calcOfZnoverly {
+  position: absolute;
+  display: none;
+}
+.calcOfZnoverly .insert {
+  width: 95%;
+  padding: 0;
+  border: 21px solid #28293d;
+  background: #28293d;
+}
+.calcOfZnoverly .insert input {
+  background-color: transparent;
+  border: 0;
+}
+.calcOfZnoverly .insert input:focus {
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+}
+#resOfThis {
+  font-size: 40px;
+}
+
+#modulo {
+  margin-bottom: 20px;
+  width: 60px;
+  height: 40px;
+  background-color: #1e1e2f;
+  color: #e0e0e0;
+  font-size: 20px;
+  border: 2px solid #009eff;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  font-family: "Courier New", Courier, monospace;
+  margin: 10px 0;
+  padding: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#modulo:focus {
+  background-color: #252536;
+  outline: none;
+  transform: scale(1.05);
+}
+
+#modulo::placeholder {
+  color: #009eff;
+  opacity: 0.7;
+}
+
+.calcOfZn .container {
+  flex-wrap: wrap;
+  gap: 10px;
+  background-color: #333;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.calcOfZn input#num1,
+.calcOfZn input#num2,
+.calcOfZn input#num3,
+.calcOfZn input#num4 {
+  width: 40px;
+  height: 40px;
+  font-size: 40px;
+  color: white;
+  transform: translate(-20px, 0);
+  background-color: inherit;
+  border: 0;
+  display: none;
+
+}
+
+.calcOfZn input#pow1,
+.calcOfZn input#pow2,
+.calcOfZn input#pow3,
+.calcOfZn input#pow4 {
+  width: 25px;
+  height: 25px;
+  transform: translate(-30px, -25px);
+  font-size: 25px;
+  color: white;
+  background-color: inherit;
+  border: 0;
+  display: none;
+}
+
+.calcOfZn input#heipow1,
+.calcOfZn input#heipow2 {
+  width: 15px;
+  height: 15px;
+  transform: translate(-33px, -43px);
+  font-size: 15px;
+  color: rgb(255, 0, 0);
+  background-color: inherit;
+  border: 0;
+  font-weight: bolder;
+  display: none;
+
+
+}
+
+/* Button styling */
+.calcOfZn button {
+  background-color: #009eff;
+  border: none;
+  color: #fff;
+  padding: 15px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Button hover effects */
+.calcOfZn button:hover {
+  background-color: #0077cc;
+  transform: translateY(-2px);
+}
+
+.calcOfZn button:active {
+  background-color: #005fa3;
+  transform: translateY(0);
+}
+
+/* Specific button styles */
+.calcOfZn button#operation,
+.calcOfZn button#power,
+.calcOfZn button#minus,
+.calcOfZn button#backspace,
+.calcOfZn button#clear,
+.calcOfZn button#equals {
+  background-color: #009eff;
+}
+
+.calcOfZn button#backspace,
+.calcOfZn button#clear {
+  background-color: #ff4d4d;
+}
+
+.calcOfZn button#equals {
+  background-color: #28a745;
+}
+
+/* Grid layout for the keyboard */
+.calcOfZn .keyboard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  margin-top: 20px;
+  margin: 0 10%;
+}
+
+/* Result display */
+.calcOfZn #result {
+  margin-top: 20px;
+  color: #ffffff;
+  font-weight: bold;
+  background-color: #333;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  font-size: 1.5em;
+  text-align: center;
+}
+
+/* Specific styles for the power button */
+.calcOfZn button#power {
+  font-family: "Arial", sans-serif;
+  font-size: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.calcOfZn button#power sup {
+  font-size: 0.7em;
+  position: relative;
+  top: -2px;
+  right: -2px;
+  width: 8px;
+  height: 8px;
+}
+
+/* =========================================================== */
+
+.calcOfZnoverly {
+  margin-left: 240px;
+  padding: 30px;
+  min-height: 100vh;
+  background-color: #28293d;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+#backOfCalc {
+  width: 130%;
+  max-width: 800px;
+  padding: 20px;
+  background-color: #28293d;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+.prodect,
+.ad {
+  font-size: 40px;
+  color: #009eff;
+}
+
+#l1,
+#l2,
+#r1,
+#r2 {
+  display: none;
+  position: relative;
+}
+.ad {
+  display: none;
+  transform: translate(-33px, 0);
+  position: relative;
+}
+#l2 {
+  transform: translateX(-34px);
+}
+#r1 {
+  transform: translateX(-23px);
+}
+
+#l1 {
+  transform: translateX(-16px);
+}
+
+#r2 {
+  transform: translateX(-23px);
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>حساب عكس التبديلات</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      input,
+      button {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>حساب عكس التبديلات</h1>
+    <label for="permForOrder">أدخل التبديلات (مثال: (1,2,3),(4,5,6)):</label>
+    <input type="text" id="permForOrder" value="(1 2 3)(4 5)" />
+    <button onclick="displayResult()">احسب العكس</button>
+    <h2>النتيجة:</h2>
+    <div id="result"></div>
+
+    <script>
+      // دالة لعكس العناصر مع تثبيت العنصر الأول
+      function inversPerm(arr) {
+        if (arr.length <= 1) {
+          return arr; // إذا كانت المصفوفة تحتوي على عنصر واحد أو أقل، تعود كما هي.
+        }
+
+        // استخراج العنصر الأول
+        const firstElement = arr[0];
+
+        // عكس العناصر المتبقية
+        const reversedRest = arr.slice(1).reverse();
+
+        // دمج العنصر الأول مع بقية العناصر المعكوسة
+        return [firstElement, ...reversedRest];
+      }
+
+      // دالة لتقسيم النص إلى مصفوفات فرعية
+      function splitIntoSubarrays(inputString, character) {
+        // تقسيم النص إلى أجزاء باستخدام الكاركتر المحدد
+        const parts = inputString.split(character);
+
+        // تحويل كل جزء إلى مصفوفة فرعية وحذف المصفوفات الفارغة
+        const resultArray = parts
+          .map((part) => part.split("").filter((ch) => ch.trim() !== ""))
+          .filter((subArray) => subArray.length > 0);
+
+        return resultArray;
+      }
+
+      // دالة لحساب العكس للتبديلات
+      function calcuatePermoInvers() {
+        let cycs = document.getElementById("permForOrder").value;
+        const splitChar = "(";
+
+        // الحصول على المصفوفات الفرعية بعد تقسيم النص
+        let invCycs = splitIntoSubarrays(cycs, splitChar);
+
+        // تطبيق دالة inversPerm على كل مصفوفة فرعية، مع إزالة الأقواس وتحويل العناصر إلى أرقام
+        let result = invCycs.map(
+          (perm) =>
+            `(${inversPerm(
+              perm.join("").replace(/[()]/g, "").split("").map(Number)
+            ).join(" ")})`
+        );
+
+        return result;
+      }
+
+      // دالة لعرض النتيجة في العنصر المناسب
+      function displayResult() {
+        const result = calcuatePermoInvers();
+        document.getElementById("result").innerHTML = result.join("");
+      }
+
+      function gcd(a, b) {
+        if (!b) {
+          return a;
+        }
+        return gcd(b, a % b);
+      }
+
+      function lcm(a, b) {
+        return Math.abs(a * b) / gcd(a, b);
+      }
+      function lcmOfArray(arr) {
+        return arr.reduce((acc, val) => lcm(acc, val), 1);
+      }
+
+     
+
+      function calcuatePermOrder(permo) { 
+      let arr4Order = [];
+        const splitChar = "(";
+        let cy = document.getElementById("permForOrder").value;
+        // الحصول على المصفوفات الفرعية بعد تقسيم النص
+        let orderCycs = splitIntoSubarrays(cy, splitChar);
+        // تطبيق دالة inversPerm على كل مصفوفة فرعية، مع إزالة الأقواس وتحويل العناصر إلى أرقام
+        let result = orderCycs.map((cyc, i) => {
+          arr4Order.push(
+            cyc.join("").replace(/[()]/g, "").split("").map(Number).length
+          );
+        });
+        let Order = lcmOfArray(arr4Order);
+
+        return Order;
+      }
+     

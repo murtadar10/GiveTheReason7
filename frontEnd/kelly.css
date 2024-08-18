@@ -1,0 +1,32 @@
+#Quotient {
+    margin: 20px;
+}
+
+#Quotient input, #Quotient button {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#Quotient table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: center;
+}
+
+#Quotient th, #Quotient td {
+    padding: 10px;
+    border: 1px solid #555;
+    background-color: #444;
+    color: #e0e0e0;
+}
+
+#Quotient th {
+    background-color: #222;
+}
+
+#normal-kelly-table, #cyclic-kelly-table {
+    display: none; /* Initially hide both tables */
+}

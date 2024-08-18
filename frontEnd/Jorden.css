@@ -1,0 +1,281 @@
+.JordenHolder {
+    font-size: x-large;
+    font-family: 'Times New Roman', serif;
+    background-color: #1e1e2f;
+    color: #e0e0e0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.JordenHolder-header {
+    background-color: #333;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.JordenHolder-nav .JordenHolder-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* وضع العناصر في الوسط */
+    gap: 10px; /* تقليل المسافة بين العناصر */
+    padding: 0;
+    margin: 0;
+}
+
+.JordenHolder-nav .JordenHolder-menu-item {
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px; /* يمكن تقليل حجم النص إذا لزم الأمر */
+    padding: 8px 15px; /* تقليل المساحة داخل العناصر */
+    transition: color 0.3s;
+}
+
+.JordenHolder-nav .JordenHolder-menu-item:hover {
+    color: #009eff;
+}
+
+.JordenHolder-content {
+
+    position: relative;
+    width: 100%;
+    height: 100%;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center; /* وضع المحتوى في وسط الشاشة أفقياً */
+    align-items: center; /* وضع المحتوى في وسط الشاشة عمودياً */
+    padding: 20px;
+}
+
+.JordenHolder-section {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 80%; /* تقليل العرض ليكون في الوسط */
+    opacity: 0;
+    transition: all 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* وضع المحتوى في الوسط عمودياً */
+    align-items: center; /* وضع المحتوى في الوسط أفقياً */
+    background-color: #444; /* إضافة خلفية لمزيد من الوضوح */
+    border-radius: 10px; /* إضافة زوايا منحنية */
+    padding: 20px;
+}
+
+.JordenHolder-section.active {
+    left: 50%; /* ضع العنصر في منتصف العرض */
+    transform: translateX(-50%); /* محاذاة الوسط */
+    opacity: 1;
+}
+
+.JordenHolder-section h1 {
+    font-size: 28px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.JordenHolder-section p {
+    font-size: 16px;
+    color: #e0e0e0;
+}
+
+
+/* ================================================================================================= */
+/* ** Overall Body Styling ** */
+.jordn-body {
+    font-family: 'Gothic A1', sans-serif;
+    background-color: #1e1e2f; /* Dark background */
+    color: #e0e0e0; /* Light text color */
+    margin: 0;
+    padding: 20px;
+}
+
+/* ** Header Styling ** */
+.jordn-header {
+    background-color: #333;
+    color: #e0e0e0;
+    padding: 20px;
+    border-bottom: 2px solid #555;
+    text-align: center;
+}
+
+.jordn-header h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.jordn-nav {
+    margin: 20px 0 !important;
+    position: fixed !important;
+    right: 0 !important;
+}
+
+.jordn-nav button {
+    background-color: #009eff;
+    color: #fff;
+    border: 1px solid #555;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.jordn-nav button:hover {
+    background-color: rgba(0, 123, 255, 0.7);
+    transform: scale(1.05);
+}
+
+/* ** Main Section Styling ** */
+.jordn-section {
+    background-color: #222;
+    border: 1px solid #555;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s forwards;
+}
+
+/* ** Fade-In Animation ** */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ** Container Styling ** */
+.jorden-container {
+    width: 90%;
+    background-color: #333;
+    border: 1px solid #555;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+/* ** Input Group Styling ** */
+.jorden-input-group-container {
+    margin: 40px 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.jorden-input-group {
+    position: relative;
+}
+
+.jorden-input-group input {
+    width: 40px;
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #444;
+    color: #e0e0e0;
+    text-align: center;
+    font-family: 'Gothic A1', sans-serif;
+}
+
+.jorden-remove-btn {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.jorden-remove-btn:hover {
+    background-color: #cc0000;
+}
+
+/* ** Separator Styling ** */
+.jorden-separator {
+    font-size: 24px;
+    color: #e0e0e0;
+    margin: 0 5px;
+}
+
+/* ** Button Styling ** */
+button {
+    background-color: #009eff;
+    color: #fff;
+    border: 1px solid #555;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: rgba(0, 123, 255, 0.7);
+    transform: scale(1.05);
+}
+
+/* ** Result and Steps Styling ** */
+.jorden-result,
+.jorden-steps {
+    background-color: #333;
+    border: 1px solid #555;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 20px;
+    white-space: pre-wrap;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.jorden-result {
+    font-weight: bold;
+}
+
+.jorden-steps {
+    font-size: 1em;
+}
+
+
+/*  */
+
+.JordenHolderinput-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.JordenHolderinput {
+    margin: 20px 0;
+
+    width: 60px; /* عرض مربع الإدخال */
+    padding: 10px 15px; /* المساحة الداخلية */
+    font-size: 16px;
+    color: #e0e0e0;
+    background-color: #444; /* خلفية مربع الإدخال */
+    border: 2px solid #555; /* لون الحدود */
+    border-radius: 8px; /* زوايا منحنية */
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.JordenHolderinput::placeholder {
+    color: #999; /* لون النص داخل مربع الإدخال */
+}
+
+.JordenHolderinput:focus {
+    border-color: #009eff; /* تغيير لون الحدود عند التركيز */
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); /* تأثير الظل عند التركيز */
+}

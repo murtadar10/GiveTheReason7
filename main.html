@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Group Theory Program</title>
+    <link rel="stylesheet" href="/group/frontEnd/main.css" />
+    <link rel="stylesheet" href="/group/frontEnd/zn.css" />
+    <link rel="stylesheet" href="/group/frontEnd/calcOfZn.css">
+    <link rel="stylesheet" href="/group/frontEnd/Un.css">
+    <link rel="stylesheet" href="/group/frontEnd/permutition.css">
+    <link rel="stylesheet" href="/group/frontEnd/symmetryGroupD4.css">
+    <link rel="stylesheet" href="/group/frontEnd/Quotien.css">
+    <link rel="stylesheet" href="/group/frontEnd/Jorden.css">
+    <link rel="stylesheet" href="/group/frontEnd/isGroup.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.2.0/math.min.js"></script>
+
+
+    
+    <style></style>
+  </head>
+
+  <body>
+    <header>
+      <div id="logo-container">
+        <h1 id="animated-text">Group Theory</h1>
+      </div>
+    </header>
+    <nav class="sidebar" id="sidebar">
+      <ul>
+        <li><a href="#" onclick="showSection('group-test')">Group Test</a></li>
+        <li>
+          <a href="#" onclick="showSection('normal-subgroup')">Zn Subgroup</a>
+        </li>
+        <li>
+          <a href="#" onclick="showSection('symmetric-group')"
+            >Permutation Group</a
+          >
+        </li>
+        <li>
+          <a href="#" onclick="showSection('dihedral-group')">Symmetric Group</a>
+        </li>
+        <li>
+          <a href="#" onclick="showSection('quotient-group')">Quotient Group</a>
+        </li>
+        </li>
+        <li>
+          <a href="#" onclick="showSection('jordan-holder')"
+            >Jordan-Hölder Theorem</a
+          >
+        </li>
+        <li>
+          <a href="#" onclick="showSection('isomorphism')"
+            >Isomorphism and Homomorphism</a
+          >
+
+      </ul>
+    </nav>
+    <main id="main-content">
+      <section id="group-test" class="hidden">
+        <h2>Group Test Interface</h2>
+        <div class="isGroup" > 
+          <h1>اختبار الزمرة للمجموعات غير المنتهية</h1>
+          <label for="operation">أدخل العملية الثنائية (مثل a * b * 2):</label>
+          <input type="text" id="operation" placeholder="a * b * 2">
+          
+         <label for="range">اختر المجموعة:</label>
+           <select id="range">
+              <option value="naturals">N</option>
+              <option value="integers" selected>Z</option>
+            </select>
+      
+          <button onclick="checkGroupProperties()">Check</button>
+      
+            <div id="resultsIsGroup"></div>
+         </div>
+      </section>
+
+      <section id="normal-subgroup" class="hidden">
+        <!-- هنا الزمرة المعيارية  -->
+        <div class="Zngroup">
+          <div id="main-content">
+            <div id="znContainer" class="container">
+            
+              <h2>Zn Group</h2>
+              <div class="input-group">
+                <label class="mo" for="modulus"
+                  >enter the valou of group (modulus): Z
+                </label>
+                <input
+                  class="OG"
+                  type="number"
+                  id="modulus"
+                  min="2"
+                  required
+                  title="n"
+                />
+                <button id="ShowResultOfZn">Show Results</button>
+              </div>
+              <div id="resultsOfZn" class="results" style="display: none;" >
+                <h2>Results:</h2>
+                <p id="groupElements">Zn =</p>
+                <p id="AllElement" style="display: none"></p>
+
+                <button id="allElements" onclick="allOrders()">
+                  show More
+                </button>
+                <p id="subgroups">proper subgroups =</p>
+                <p id="AllSubgroups">All Subgroups =</p>
+                <p id="generators">Generators =</p>
+                <button id="kellyTableZn">Show kelly table</button>
+                <table id="kleinTable"></table>
+                      </div>
+              
+            </div>
+
+
+            <!--  --> <!-- Un mode -->
+            <div id="Un">
+              <h2  >Un Group </h2>
+              <label class="mo" for="inputN">Enter the value of n:</label>
+              <input class="OG" type="number" id="inputN" min="1" placeholder="Enter a positive integer n">
+      
+              <button id="UnCalcBtn">Show Results</button>
+      
+              <div id="resultContainer" class="result" style="display:none;">
+                  <h3>Results</h3>
+                  <p id="elements"></p>
+                  <p id="order"></p>
+                  <h3>Klein Table</h3>
+                  <div id="tableContainer"></div>
+              </div>
+          </div>
+
+
+          </div>
+         
+
+          <!-- هنا الحاسبة مال الجمع المعياري  -->
+<div><button id="showCalc"> calculater Of Zn </button>
+          <button id="UnModeBtn" >Un mode </button></div>
+          
+
+        <!-- خلفية الحاسبة -->
+ <div id="calcOfZnoverly" >
+    <!-- طبقة تغطية   -->
+    <div id="backOfCalc" >
+    <!-- كود الحاسبة  -->
+    <div class="calcOfZn">
+        <h1>Modular Arithmetic Calculator</h1>
+
+<div class="container">
+  <label for="modulo" style="font-size: 40px;" > Z </label>
+  <input id="modulo" type="number" value="12" >
+  <div id="showBox" class="insert">
+    <span id="l1" class="prodect">(</span>
+      <input class="numbersOfCalcZn" id="num1" type="text"  >
+      <input class="powersOfCalcZn" id="pow1" type="text";>
+  
+  <span id="ad1" class="ad" >+</span>
+      <input class="numbersOfCalcZn" id="num2" type="text">
+      <input class="powersOfCalcZn" id="pow2" type="text";>
+      
+      <span id="r1" class="prodect">)</span>
+      
+  <input class="powersOfCalcZn" id="heipow1" type="text">
+
+      <span id="ad2" class="ad" >+</span>
+
+  <span id="l2" class="prodect">(</span>
+     <input class="numbersOfCalcZn" id="num3" type="text">
+        <input class="powersOfCalcZn" id="pow3" type="text";>
+        <span id="ad3" class="ad" >+</span>
+  
+      <input class="numbersOfCalcZn" id="num4" type="text">
+      <input class="powersOfCalcZn" id="pow4" type="text";>
+      <span id="r2" class="prodect">)</span>
+  
+      
+      <input class="powersOfCalcZn" id="heipow2" type="text">
+  </div>
+
+  <div class="keyboard">
+      <button class="num-btn">1</button>
+      <button class="num-btn">2</button>
+      <button class="num-btn">3</button>
+      <button id="Znoperation">+</button>
+      <button class="num-btn">4</button>
+      <button class="num-btn">5</button>
+      <button class="num-btn">6</button>
+      <button id="power">
+          x<sup class="superscript"></sup>
+      </button>
+      
+      <button class="num-btn">7</button>
+      <button class="num-btn">8</button>
+      <button class="num-btn">9</button>
+      <button id="minus">-</button>
+
+      <button id="backspace">⌫</button>
+      <button class="num-btn">0</button>
+      <button id="clear">C</button>
+      <button id="equals" onclick="calculate()" >=</button>
+  </div>
+  <div id="resultOfCalc">Result:</div>
+
+</div>
+
+</div>
+
+</div>
+
+        </div>
+      </section>
+          <!--   التباديل -->
+
+      <section id="symmetric-group" class="hidden">
+        
+        <div class="Permutation">
+          <aside class="sidebar">
+              <button onclick="openPage('page1')">Page 1</button>
+              <button onclick="openPage('page2')">Page 2</button>
+              <button onclick="openPage('page3')">Page 3</button>
+              <button onclick="openPage('page4')">Page 4</button>
+          </aside>
+          <main id="main-content">
+            <!--تفاصيل الزمرة  p1 -->
+              <div id="page1" class="page">
+                <div class="Permo">
+        <h1>Symmetric Group Permutations</h1>
+        <label for="groupOrder">Enter the order of the symmetric group :</label><br>
+        <span style="font-size: 70px;">S</span><input type="number" id="groupOrder" placeholder="e.g., 3" min="2" value="3" >
+        <br>
+        <button onclick="generatePermutations()">Generate Permutations</button>
+        <div id="groupInfo" class="group-info"></div>
+        <div id="permutations" class="permutation-info"></div>
+    </div>
+              </div>
+
+              <!-- page2 invers & Oreder -->
+              <div id="page2" class="page">
+                <h1>Permutation Order and Inverse Calculator</h1>
+                    <label for="permutation-input">Enter a Permutation:</label>
+                    <input type="text" id="permutation-input" placeholder="e.g., 1 2 3" />
+            
+                    <button type="button" onclick="calculateOrderInverse()">Calculate</button>
+            
+                <div id="res4Or&Inv">
+                    <h3>Results:</h3>
+                </div>
+
+              </div>
+
+              <!-- page 3 power  -->
+              <div id="page3" class="page">
+                <div class="powerOfPermo">
+                  <h1>Power calculation</h1>
+                  <label for="power">Enter the Permutation :</label>
+                  <input type="text" id="input4Pow" placeholder="(1 2 3)(4 5)">
+                  <br>
+                  <label for="power">Enter the power :</label><br>
+                  <input type="number" id="input4Pow2">
+                  <br>
+                  <button onclick="calculatePowerPerm()">Calculate Power</button>
+                  <div id="res4Pow" ></div>
+              </div>
+              </div>
+
+              <!-- page 4 position -->
+              <div id="page4" class="page">
+                <div class="Composition">
+                  <h1>Permutation Composition Calculator</h1>
+                  <label for="permutationOrder">Enter the order of the symmetric group :</label><br>
+        <span style="font-size: 70px;">S</span><input type="number" id="permutationOrder"  min="2"  >
+        <br>
+                  <div id="permutationsContainer">
+                    <input
+                      type="text"
+                      id="permutation1"
+                      class="permutation-input"
+                    />
+                    <input type="text" id="power1" class="power-input"  />
+                    <span> O </span>
+                    <input
+                      type="text"
+                      id="permutation2"
+                      class="permutation-input"
+            
+                      />
+            
+                    <input type="text" id="power2" class="power-input"  />
+                    <span> O </span>
+                    <input
+                      type="text"
+                      id="permutation3"
+                      class="permutation-input"
+            
+                      />
+            
+                    <input type="text" id="power3" class="power-input"  />
+                    <span> O </span>
+                    <input
+                      type="text"
+                      id="permutation4"
+                      class="permutation-input"
+            
+                      />
+            
+                    <input type="text" id="power4" class="power-input"  />
+            
+                    
+                  </div>
+              <div id="resOfPow" class="resultOfComposition"></div>
+                  <button onclick="calcCompoWithPow()">
+                    Calculate Composition
+                  </button>
+                
+                </div>
+            
+              </div>
+          </main>
+      </div>
+      </section>
+      <!-- التناظر حول المربع  -->
+      <section id="dihedral-group" class="hidden">
+        <div id="D4">
+          
+          <div class="symmetry-group-D4">
+            <h2>D4 Group</h2>
+            <h1>Symmetry Group D4 Composition</h1>
+            <div id="D4ShowBox" class="input-container">
+              <span id="D4l1" class="bracket">(</span>
+              <input class="element" id="element1" type="text" />
+              <input class="D4pow" id="D4pow1" type="text" min="-10" />
+              <span class="D4op">o</span>
+              <input class="element" id="element2" type="text" />
+              <input class="D4pow" id="D4pow2" type="text" min="-10" />
+              <span id="D4r1" class="bracket">)</span>
+              <input class="D4pow-secondary" id="D4heipow1" type="text" min="-10" />
+              <span class="D4op">o</span>
+              <span id="D4l2" class="bracket">(</span>
+              <input class="element" id="element3" type="text" />
+              <input class="D4pow" id="D4pow3" type="text" min="-10" />
+              <span class="D4op">o</span>
+              <input class="element" id="element4" type="text" />
+              <input class="D4pow" id="D4pow4" type="text" min="-10" />
+              <span id="D4r2" class="bracket">)</span>
+              <input class="D4pow-secondary" id="D4heipow2" type="text" min="-10" />
+            </div>
+            <div class="action-buttons">
+              <button onclick="compose()">Compose</button>
+            </div>
+            <div class="results">
+              <p id="composition">Composition Result:</p>
+            </div>
+            <div class="D4keyboard">
+              <!-- Existing buttons -->
+              <button id="D4operation" class="delete">o</button>
+              <button id="D4power" class="operator">
+                <span> x <span class="superscript"> </span></span>
+              </button>
+              
+
+              <button id="D4Clear" class="triple">C</button>
+              <button id="D4backspace" class="delete">⌫</button>
+              <button id="D4minus"  class="operator">
+                -
+              </button>
+              <button class="number">1</button>
+              <button class="number">2</button>
+
+              <button onclick="appendToDisplay('I')" class="letter">I</button>
+              <button onclick="appendToDisplay('R90')" class="letter">R90</button>
+              
+              <button class="number">3</button>
+              <button class="number">4</button>
+              <button onclick="appendToDisplay('R180')" class="letter">R180</button>
+              <button onclick="appendToDisplay('R270')" class="letter">R270</button>
+              <button class="number">5</button>
+              <button class="number">6</button>
+
+              <button onclick="appendToDisplay('V')" class="letter">V</button>
+              <button onclick="appendToDisplay('H')" class="letter">H</button>
+              <button class="number">7</button>
+              <button class="number">8</button>
+
+              <button onclick="appendToDisplay('D1')" class="letter">D1</button>
+              <button onclick="appendToDisplay('D2')" class="letter">D2</button>
+              <button class="number">9</button>
+              <button class="number">0</button>
+              <!-- Added buttons for numbers and minus -->
+              
+              <button id="resultOfSymmetry" onclick="compose()" class="equal">
+                =
+              </button>
+              
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <section id="cyclic-group" class="hidden">
+        <h2>Cyclic Group</h2>
+        <p>Details about cyclic groups.</p>
+      </section>
+
+      <section id="quotient-group" class="hidden">
+        <h2>Quotient Group</h2>
+        <div id="Quotient">
+          <h1>Group and Cosets Program</h1>
+          
+          <div id="quotietnZn">
+              <h2>Zn Group</h2>        
+              <label for="orderGroup">Enter the number of the group:</label><br>
+              <span style="font-size: 70px;">Z</span><input type="number" id="orderGroup" value="12" ><br>
+              
+              <label for="subgroup">Enter the number of the subgroup:</label>
+              <input type="number" id="subgroup" value="4" >
+              
+              <button id="submitButton">Calculate</button>
+          </div>
+          
+          <div id="quotientCyclic" class="hidden">
+              <h2>Cyclic Group</h2>
+              <label for="orderCyclicGroup">Enter the order of the Cyclic group:</label>
+              <input type="number" id="orderCyclicGroup" value="12" >
+              
+              <label for="subgroupCyclic">Enter the order of the subgroup:</label>
+              <input type="number" id="subgroupCyclic" value="4" >
+              
+              <button id="submitCyclicButton">Calculate Cyclic Group</button>
+          </div>
+  
+          <button id="toggleButton">Switch to Cuclic Group</button>
+  
+          <div id="resultsQ"></div>
+          <div id="stepsQ"></div>
+          
+  
+          <div id="kelly-table"></div>
+  
+          
+      </div>
+  
+      </section>
+
+      <section id="isomorphism" class="hidden">
+        <h2>Isomorphism and Homomorphism</h2>
+        <p>Details about isomorphisms and homomorphisms.</p>
+      </section>
+
+      <section id="jordan-holder" class="hidden">
+        <h2>Jordan-Hölder Theorem</h2>
+        <!-- jorden Sstaret  -->
+        <div class="JordenHolder">
+          <header class="JordenHolder-header">
+              <nav class="JordenHolder-nav">
+                  <ul class="JordenHolder-menu">
+                      <li class="JordenHolder-menu-item" data-target="#JordenHolder-section1">Composition Test</li>
+                      <li class="JordenHolder-menu-item" data-target="#JordenHolder-section2">Solvble Test</li>
+                      <li class="JordenHolder-menu-item" data-target="#JordenHolder-section3">P-group </li>
+                      <li class="JordenHolder-menu-item" data-target="#JordenHolder-section4">Sylow p-subgroup</li>
+                  </ul>
+              </nav>
+          </header>
+  
+          <div class="JordenHolder-content">
+              <section id="JordenHolder-section1" class="JordenHolder-section active">
+                  <!-- Compo start -->
+                  <div class="jorden-container">
+                      <h1>Check Composition Series</h1>
+                      <label for="originalGroup">Enter original group order:</label>
+                      <input class="JordenHolderinput" type="number" id="originalGroup" min="1" placeholder="Enter order of original group" />
+              
+                      <div id="Jorden-subgroups" class="jorden-input-group-container">
+                          <div class="jorden-input-group">
+                              <button class="jorden-remove-btn" onclick="removeSubgroupComp(this)">x</button>
+                              <input  type="number" placeholder="Generator" min="1" />
+                          </div>
+                      </div>
+                      <button onclick="addSubgroupCompJord()">Add Subgroup</button>
+                      <button onclick="checkSeriesCompJord()">Check Series</button>
+                      <div class="jorden-result" id="resultComp"></div>
+                      <div class="jorden-steps" id="stepsComp"></div>
+                  </div>
+                   <!-- Comp End  -->
+              </section>
+              <section id="JordenHolder-section2" class="JordenHolder-section">
+                  <!-- Solvble Start -->
+                  <div class="jorden-container">
+                      <h1>Check Solvability of a Group</h1>
+                      <label for="groupOrderSolv">Enter order of the group:</label>
+                      <input class="JordenHolderinput" type="number" id="groupOrderSolv" min="1" placeholder="Enter order" />
+              
+                      <div id="normalSubgroupsSolv" class="jorden-input-group-container">
+                          <div class="jorden-input-group">
+                              <button class="jorden-remove-btn" onclick="removeSubgroupSolv(this)">x</button>
+                              <input class="JordenHolderinput" type="number" placeholder="Subgroup order" min="1" />
+                          </div>
+                      </div>
+                      <button onclick="addSubgroupSolv()">Add Subgroup</button>
+                      <button onclick="checkSolvabilitySolv()">Check Solvability</button>
+                      <div class="jorden-resultSolv" id="resultSolv"></div>
+                      <div class="jorden-stepsSolv" id="stepsSolv"></div>
+                  </div>
+                  <!-- Solv End -->
+              </section>
+              <section id="JordenHolder-section3" class="JordenHolder-section">
+                  <!-- P-Gp start  -->
+                  <div class="jorden-container">
+                      <h1>Check p-Group</h1>
+                      <label for="groupOrder">Enter order of the group:</label>
+                      <input class="JordenHolderinput" type="number" id="groupOrder" min="1" placeholder="Enter order" />
+              
+                      <label for="primeNumber">Enter prime number p:</label>
+                      <input class="JordenHolderinput" type="number" id="primeNumber" min="2" placeholder="Enter prime number" />
+              
+                      <button onclick="checkPGroup()">Check p-Group</button>
+                      <div class="jorden-result-P" id="result-P"></div>
+                  </div>
+                  <!-- P-Group End -->
+              </section>
+              <section id="JordenHolder-section4" class="JordenHolder-section">
+                  <!-- Sylow Start -->
+                  <div class="jorden-container">
+                      <h1>Sylow p-Subgroup Detailed Checker</h1>
+                      <div class="jorden-input-group">
+                          <label for="groupOrderSylow">Enter order of the group:</label>
+                          <input class="JordenHolderinput" type="number" id="groupOrderSylow" min="1" placeholder="Order of the group" />
+                      </div>
+                      
+                      <button onclick="checkSylowPSubgroups()">Check Sylow p-Subgroups</button>
+                      <div class="jorden-resultSylow" id="resultSylow"></div>
+                  </di>
+                  <!-- Sylow End -->
+              </section>
+          </div>
+      </div>
+   
+  
+      
+         <!-- jorden End -->
+      </section>
+    </main>
+    
+      <p style="text-align: center;" >&copy; 2024  Group Theory Program. All rights reserved.EMAN</p>
+      <div id="social-media">
+        <a href="https://www.instagram.com/murtada.r10?igsh=b29kZnd5MDEwZXk5&utm_source=qr" target="_blank">
+          <img
+            src="/group/photos/momo.JPG"
+            alt=""
+            class="social-logo"
+          />
+        </a>
+        <a href="https://wa.me/07733786819" target="_blank">
+          <img
+            src="/group/photos/Untitled-3.png"
+            alt="WhatsApp Logo"
+            class="social-logo"
+          />
+        </a>
+       </div>
+   
+        <script src="/group/backEnd/permutition.js" ></script>
+<script src="/group/backEnd/main.js"></script>
+    <script src="/group/backEnd/zngroup.js"></script>
+    <script src="/group/backEnd/clacOfZn.js" ></script>
+    <script src="/group/backEnd/Un.js" ></script>
+    <script src="/group/backEnd/symmetryGroupD4.js"></script>
+    <script src="/group/backEnd/Quotient.js" ></script>
+    <script src="/group/backEnd/jordenHolder.js"></script>
+    <script src="/group/backEnd/isGroup.js"></script>
+
+  </body>
+</html>

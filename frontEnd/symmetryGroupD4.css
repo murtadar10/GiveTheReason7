@@ -1,0 +1,215 @@
+.symmetry-group-D4 {
+  background-color: #28293d;
+  color: #e0e0e0;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  margin: auto;
+  width: 800px;
+}
+.symmetry-group-D4 h1 {
+  text-align: center;
+  color: #009eff;
+}
+.symmetry-group-D4 .input-container {
+  padding: 0 10px;
+  margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.symmetry-group-D4 .input-container span {
+  font-size: 40px;  
+  color: #009eff;
+}
+.symmetry-group-D4 .input-container input {
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+}
+.symmetry-group-D4 .input-container input:focus {
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+}
+.symmetry-group-D4 .input-container .powers2 {
+  width: 40px;
+  height: 30px;
+}
+.symmetry-group-D4 .action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.symmetry-group-D4 .action-buttons button {
+  background-color: #009eff;
+  border: none;
+  color: #fff;
+  padding: 15px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.symmetry-group-D4 .action-buttons button:hover {
+  background-color: #0077cc;
+  transform: translateY(-2px);
+}
+.symmetry-group-D4 .action-buttons button:active {
+  background-color: #005fa3;
+  transform: translateY(0);
+}
+.symmetry-group-D4 .results {
+  margin-top: 20px;
+  font-size: 1.5em;
+  text-align: center;
+  color: #fff;
+  background-color: #333;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+.D4keyboard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  margin-top: 20px;
+}
+.D4keyboard .number {
+  background-color: #04041e;
+  color: #e0e0e0;
+}
+
+#D4minus,#D4backspace {
+  color: red;
+  background-color: #1e1e2f;
+  margin: 0;
+  padding: 0;
+}
+#D4minus{
+  font-size: xx-large;
+
+}
+
+.D4keyboard button {
+  background-color: #1e1e2f;
+  color: #e0e0e0;
+  border: 2px solid #009eff;
+  border-radius: 5px;
+  padding: 15px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.D4keyboard button:hover {
+  background-color: #009eff;
+  transform: translateY(-2px);
+}
+
+.D4keyboard button:active {
+  background-color: #0077cc;
+  transform: translateY(0);
+}
+
+#resultOfSymmetry {
+  grid-column:  span 2;
+}
+
+.superscript {
+  display: inline-block;
+  position: relative;
+  transform: translate(-3px, -9px);
+  width: 8px;
+  height: 8px;
+  border: 3px solid red;
+}
+
+.triple {
+  background-color: #ff4d4d !important;
+  grid-column: span 2 ;
+}
+
+
+.equal {
+  background-color: #28a745 !important ;
+}
+#element1,
+#element2,
+#element3,
+#element4 {
+  display: none;
+  width: 70px;
+  height: 40px;
+  font-size: 30px;
+  color: white;
+  transform: translate(-20px, 0);
+  padding: 0;
+}
+#D4pow1,
+#D4pow2,
+#D4pow3,
+#D4pow4 {
+  display: none;
+
+  width: 25px;
+  height: 25px;
+  transform: translate(-30px, -25px);
+  font-size: 25px;
+  color: white;
+}
+#D4heipow1,
+#D4heipow2 {
+  display: none;
+  width: 15px;
+  height: 15px;
+  transform: translate(-33px, -43px);
+  font-size: 15px;
+  color: white;
+}
+
+.bracket,
+.D4op {
+  font-size: 40px;
+  color: #009eff;
+}
+#D4resOfThis {
+  font-size: 35px;
+  font-weight: bold;
+}
+#D4l1,
+#D4l2,
+#D4r1,
+#D4r2 {
+  display: none;
+  position: relative;
+}
+.D4op {
+  display: none;
+  transform: translate(-33px, 0);
+  position: relative;
+}
+#D4l2 {
+  transform: translate(-34px, -10px);
+}
+#D4r1 {
+  transform: translate(-23px, -10px);
+}
+
+#D4l1 {
+  transform: translate(-16px, -10px);
+}
+
+#D4r2 {
+  transform: translate(-23px, -10px);
+}
+#D4operation ,#D4power{
+grid-column: 2 span;
+}
+
