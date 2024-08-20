@@ -1,3 +1,37 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const menuItems = document.querySelectorAll('.JordenHolder-menu-item');
+    const description = document.getElementById('description');
+
+    menuItems.forEach(item => {
+        item.addEventListener('click', () => {
+            // إزالة الكلاس النشط من جميع العناصر
+            menuItems.forEach(el => el.classList.remove('active'));
+
+            // إضافة الكلاس النشط للعنصر المحدد
+            item.classList.add('active');
+
+            // إظهار القسم المقابل
+            const target = document.querySelector(item.getAttribute('data-target'));
+            document.querySelectorAll('.JordenHolder-section').forEach(sec => sec.classList.remove('active'));
+            target.classList.add('active');
+
+            // تحريك العنصر المحدد إلى أعلى القائمة
+            const nav = document.querySelector('.JordenHolder-nav');
+            const itemHeight = item.offsetHeight;
+            const itemOffsetTop = item.offsetTop;
+            const navScrollTop = itemOffsetTop - (nav.offsetHeight / 2) + (itemHeight / 2);
+
+            // حساب المسافة المطلوبة لتحريك العنصر إلى أعلى
+            nav.scrollTop = navScrollTop;
+
+            // عرض الوصف
+            description.textContent = item.getAttribute('data-description');
+            description.style.display = 'block';
+        });
+    });
+});
+
+
 document.querySelectorAll('.JordenHolder-menu-item').forEach(item => {
     item.addEventListener('click', () => {
         const target = item.getAttribute('data-target');
@@ -17,10 +51,10 @@ document.querySelectorAll('.JordenHolder-menu-item').forEach(item => {
 function addSubgroupCompJord() {
     const container = document.getElementById('Jorden-subgroups');
     const newSubgroup = document.createElement('div');
-    newSubgroup.className = 'jorden-input-group';
+    newSubgroup.className = 'jorden-sups';
     newSubgroup.innerHTML = `
         <button class="jorden-remove-btn" onclick="removeSubgroupComp(this)">x</button>
-        <input type="number" placeholder="Generator" min="1" />
+        <input type="number" class="JordenHolderinput" min="1" />
     `;
     container.appendChild(newSubgroup);
     updateSeparatorsCompJord();
@@ -34,7 +68,7 @@ function removeSubgroupComp(button) {
 
 function updateSeparatorsCompJord() {
     const container = document.getElementById('Jorden-subgroups');
-    const items = container.querySelectorAll('.jorden-input-group');
+    const items = container.querySelectorAll('.jorden-sups');
     items.forEach((item, index) => {
         // Remove existing separators
         const existingSeparator = item.querySelector('.jorden-separator');
@@ -43,7 +77,7 @@ function updateSeparatorsCompJord() {
         }
         
         // Add new separator
-        if (index < items.length - 1) {
+        if (index < items.length -1) {
             let separator = document.createElement('span');
             separator.className = 'jorden-separator';
             separator.innerText = '⊃';
@@ -125,10 +159,10 @@ function checkSeriesCompJord() {
 function addSubgroupSolv() {
     const container = document.getElementById('normalSubgroupsSolv');
     const newSubgroup = document.createElement('div');
-    newSubgroup.className = 'jorden-input-group';
+    newSubgroup.className = 'jorden-sups';
     newSubgroup.innerHTML = `
         <button class="jorden-remove-btn" onclick="removeSubgroupSolv(this)">x</button>
-        <input type="number" placeholder="Subgroup order" min="1" />
+        <input type="number" class="JordenHolderinput" min="1" />
     `;
     container.appendChild(newSubgroup);
     updateSeparatorsSolv();
@@ -142,7 +176,7 @@ function removeSubgroupSolv(button) {
 
 function updateSeparatorsSolv() {
     const container = document.getElementById('normalSubgroupsSolv');
-    const items = container.querySelectorAll('.jorden-input-group');
+    const items = container.querySelectorAll('.jorden-sups');
     items.forEach((item, index) => {
         // Remove existing separators
         const existingSeparator = item.querySelector('.jorden-separator');

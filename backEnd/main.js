@@ -1,3 +1,5 @@
+
+
 function showSection(sectionId) {
   const sections = document.querySelectorAll("main#main-content section");
   sections.forEach((section) => {
@@ -27,6 +29,7 @@ document.getElementById("showCalc").addEventListener("click", () => {
     calcBack.style.display = "block";
     znBack.style.display = "none";
     UnBack.style.display = "none";
+    document.getElementById('UnModeBtn').style.display = "none";
 
     document.getElementById("showCalc").textContent = "Hide Calculator";
     document.getElementById("showCalc").style.backgroundColor = "red";
@@ -34,7 +37,7 @@ document.getElementById("showCalc").addEventListener("click", () => {
     calcBack.style.display = "none";
     znBack.style.display = "block";
     document.getElementById("showCalc").style.backgroundColor = "#009eff";
-
+    document.getElementById('UnModeBtn').style.display = "inline-block";
     document.getElementById("showCalc").textContent = "Show Calculator";
   }
 });

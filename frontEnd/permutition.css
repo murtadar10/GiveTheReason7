@@ -1,27 +1,62 @@
+/* ======== */
 
-.Permutation .container {
+.Permutation button {
+    background: linear-gradient(145deg, #2e2e2e, #1c1c1c); /* تدرج لوني بسيط */
+    border: 1px solid #444; /* حدود داكنة */
+    color: #f0f0f0; /* لون نص فاتح */
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s; /* تأثيرات انتقال سلسة */
+    display: inline-block; /* عرض الأزرار كتلة مدمجة */
+    text-align: center; /* محاذاة النص في وسط الزر */
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3); /* ظل بسيط للزر */
+    border: none; /* إزالة الحدود الافتراضية للزر */
+  }
+  
+  .Permutation button:hover {
+    background: linear-gradient(145deg, #444, #333); /* تدرج لوني أفتح عند التمرير */
+    transform: scale(1.01); /* تكبير الزر قليلاً عند التمرير */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* ظل أعمق عند التمرير */
+  }
+  
+  .Permutation button:active {
+    background: linear-gradient(145deg, #333, #222); /* تدرج لوني أغمق عند النقر */
+    transform: scale(1); /* إعادة الزر لحجمه الطبيعي عند النقر */
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.4); /* ظل داخلي عند النقر */
+  }
+  
+  /* ========== */
+  .Permutation .container {
     display: flex;
     height: 100vh;
-}
-
-.Permutation .sidebar {
-    width: 250px;
+  }
+  
+  .Permutation .sidebar {
+    transition: width 0.3s ease;
+    width: 6%;
+  
     background-color: #1e1e2f;
     color: #fff;
-    padding: 20px;
+    padding: 2%;
     box-sizing: border-box;
     height: 100%;
     position: fixed;
-    right: 0; /* Sidebar on the right */
-    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
-}
-
-.Permutation .sidebar:hover {
+    right: 0;
+    z-index: 1000;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .Permutation .sidebar:hover {
+    width: 35%;
     box-shadow: -2px 0 20px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
-}
-
-.Permutation .sidebar button {
+  }
+  
+  .Permutation .sidebar button {
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    font-size: 1em;
     background-color: #333;
     color: #fff;
     border: none;
@@ -32,73 +67,80 @@
     border-radius: 5px;
     margin-bottom: 10px;
     transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth color and scale transition */
-}
-
-.Permutation .sidebar button:hover {
+  }
+  
+  .Permutation .sidebar button:hover {
     background-color: #555;
     transform: scale(1.05); /* Slightly enlarge button on hover */
-}
-
-#main-contentPermo {
+  }
+  @media (min-width: 1000px) {
+  
+    .Permutation .sidebar {
+      width: 20%;
+    }
+    
+    .Permutation .sidebar:hover {
+      width: 20%;
+      box-shadow: -2px 0 20px gold; /* Stronger shadow on hover */
+    }
+  
+  }
+  
+  #main-contentPermo {
     margin-right: 270px; /* Adjust margin to accommodate the sidebar */
     padding: 20px;
     width: calc(100% - 290px);
     box-sizing: border-box;
     transition: margin-right 0.3s ease; /* Smooth margin transition */
-}
-
- .page {
+  }
+  
+  .page {
+    background: linear-gradient(to right, #fff, #e0e0e0);
+    padding: 2%;
+  
     display: none;
     opacity: 0; /* Initially hidden */
     transform: translateX(20px); /* Initially offset */
     transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transitions */
-}
-
- .page.active {
-    width: 550px;
+  }
+  
+  .page.active {
+    max-width: 600px;
+    width: 90%;
     color: #1e1e2f;
     font-weight: bold;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: "Times New Roman", Times, serif;
     border-radius: 10px;
     display: inline-block;
     display: block;
     opacity: 1;
     transform: translateX(0);
-}
-
-/* Subtle background gradient for pages */
- .page {
-    background: linear-gradient(to right, #fff, #e0e0e0);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 0.5s ease; /* Animation for page fade-in */
-}
-
-@keyframes fadeIn {
+  }
+  
+  @keyframes fadeIn {
     from {
-        opacity: 0;
-        transform: translateY(20px);
+      opacity: 0;
+      transform: translateY(20px);
     }
     to {
-        opacity: 1;
-        transform: translateY(0);
+      opacity: 1;
+      transform: translateY(0);
     }
-}
-
-/* Add smooth scroll behavior for better user experience */
-html {
+  }
+  
+  /* Add smooth scroll behavior for better user experience */
+  html {
     scroll-behavior: smooth;
-}
-.permutation-info {
+  }
+  .permutation-info {
     margin: 10px 0;
     padding: 10px;
     border-radius: 5px;
     text-align: left;
     max-width: 100%;
     overflow-x: auto;
-}
-.group-info {
+  }
+  .group-info {
     margin: 20px 0;
     padding: 10px;
     border-radius: 5px;
@@ -106,79 +148,80 @@ html {
     max-width: 100%;
     overflow-x: auto;
     font-weight: bold;
-}
-.Permo {
+  }
+  .Permo {
     color: #1e1e2f;
     font-weight: bold;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: "Times New Roman", Times, serif;
     border-radius: 10px;
     display: inline-block;
     width: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-#groupOrder{
+  }
+  #groupOrder {
     font-size: larger;
     font-weight: bold;
     width: 10%;
     border: 0;
     border-radius: 4px;
-    background-color:inherit;
+    background-color: inherit;
     color: #1d1d2e;
     cursor: pointer;
-}
-.Composition .power-input {
+  }
+  .Composition .power-input {
     position: absolute;
-    width: 20px;
-    transform: translate(-15px,-18px);
+    font-size: 0.5em;
+    width: 1em;
+    transform: translate(-84%, -66%);
     background-color: inherit;
     border-radius: 50%;
     border-width: 2px;
     border-style: solid;
     border-color: #1d1d2e;
-    border-top-color: rgba(255, 255, 255, 0) ;
-    border-bottom-color: rgba(255, 255, 255, 0) ;
-}
-.Composition .power-input:focus{
+    border-top-color: rgba(255, 255, 255, 0);
+    border-bottom-color: rgba(255, 255, 255, 0);
+  }
+  .Composition .power-input:focus {
     border: 0;
     outline: none;
-}
-.Composition .permutation-input:focus{
+  }
+  .Composition .permutation-input:focus {
     border: 0;
     outline: none;
-}
-
-.Composition .permutation-input {
-    margin: 0px 10px;
-    height: 26px;
-    width: 80px;
+  }
+  
+  .Composition .permutation-input {
+    font-size: 0.5em;
+    margin: 0px 1%;
+    width: 5.5em;
+    height: 2em;
     background-color: inherit;
     border-radius: 30%;
     border-width: 3px;
     border-style: solid;
     border-color: #1d1d2e;
-    border-top-color: rgba(255, 255, 255, 0) ;
-    border-bottom-color: rgba(255, 255, 255, 0) ;
-}
-.Composition #permutationsContainer{
-    margin: 60px 0 20px ;
-}
-.Composition .order-input{
+    border-top-color: rgba(255, 255, 255, 0);
+    border-bottom-color: rgba(255, 255, 255, 0);
+  }
+  .Composition #permutationsContainer {
+    margin: 60px 0 20px;
+  }
+  .Composition .order-input {
     margin: 20px;
     width: 30px;
-}
-#permutationOrder{
+  }
+  #permutationOrder {
     width: 30px;
-}
-
-.Composition #resOfPow{
+  }
+  
+  .Composition #resOfPow {
     margin: 10px;
     font-size: x-large;
-
-}
-/* تنسيق الـ div */
-.Composition {
+  }
+  /* تنسيق الـ div */
+  .Composition {
     /* background-color: #333; خلفية مظلمة للـ div */
-    
+  
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* ظل خفيف حول الـ div */
   }
@@ -191,7 +234,7 @@ html {
     border: 2px solid #555; /* حدود الأزرار */
     border-radius: 5px;
     padding: 10px 20px;
-    font-family: 'Garamond', serif; /* خط فيكتوري/قوطي */
+    font-family: "Garamond", serif; /* خط فيكتوري/قوطي */
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s, border-color 0.3s;

@@ -55,7 +55,7 @@ function calculate() {
 
 
   let showBox = document.getElementById("showBox");
-  let resultElement = document.createElement("span");
+  let resultElement = document.createElement("p");
   resultElement.id = "resOfThis";
   resultElement.textContent = `= ${result}`;
   showBox.appendChild(resultElement);

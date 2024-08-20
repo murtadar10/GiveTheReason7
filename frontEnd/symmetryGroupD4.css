@@ -1,29 +1,28 @@
 .symmetry-group-D4 {
   background-color: #28293d;
   color: #e0e0e0;
-  padding: 20px;
+  padding: 2%;
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   margin: auto;
-  width: 800px;
+  width: 98%;
 }
 .symmetry-group-D4 h1 {
+  font-size: 1em;
   text-align: center;
   color: #009eff;
 }
 .symmetry-group-D4 .input-container {
-  padding: 0 10px;
-  margin-top: 100px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  align-items: center;
-  justify-content: center;
+  margin: 0 auto; 
+  text-align: center;
+  padding: 0%;
+  
+  border-radius: 8px; 
+  width: 100%;
+  border: 0;
+  background: #28293d;
 }
-.symmetry-group-D4 .input-container span {
-  font-size: 40px;  
-  color: #009eff;
-}
+
 .symmetry-group-D4 .input-container input {
   background-color: transparent;
   border: 0;
@@ -144,43 +143,58 @@
 #element2,
 #element3,
 #element4 {
-  display: none;
-  width: 70px;
-  height: 40px;
-  font-size: 30px;
   color: white;
-  transform: translate(-20px, 0);
-  padding: 0;
+  width: 2.4em;
+  height: 1.5em;
+  font-size: 0.8em;
+  text-align: center;
+  border-radius: 4px;
+  background-color: inherit;
+  border: 0;
+  display: none;
 }
 #D4pow1,
 #D4pow2,
 #D4pow3,
 #D4pow4 {
-  display: none;
-
-  width: 25px;
-  height: 25px;
-  transform: translate(-30px, -25px);
-  font-size: 25px;
   color: white;
+  width: 1.1em;
+  height: 1em;
+  font-size: 0.8em;
+  text-align: center;
+  position: relative;
+  top: -0.6em;
+  left: -0.4em;
+  border-radius: 4px;
+  background-color: inherit;
+  border: 0;
+  display: none;
 }
 #D4heipow1,
 #D4heipow2 {
+  width: 1em;
+  height: 1em;
+  font-size: 0.8em;
+  text-align: center;
+  position: relative;
+  top: -1em; 
+  border-radius: 4px;
+  color: rgb(255, 0, 0);
+  background-color: inherit;
+  border: 0;
+  font-weight: bolder;
   display: none;
-  width: 15px;
-  height: 15px;
-  transform: translate(-33px, -43px);
-  font-size: 15px;
-  color: white;
+
 }
 
 .bracket,
 .D4op {
-  font-size: 40px;
+  font-size: 1em;
+  margin: 0 ;
   color: #009eff;
 }
 #D4resOfThis {
-  font-size: 35px;
+  font-size: 1em;
   font-weight: bold;
 }
 #D4l1,
@@ -192,23 +206,10 @@
 }
 .D4op {
   display: none;
-  transform: translate(-33px, 0);
+ 
   position: relative;
 }
-#D4l2 {
-  transform: translate(-34px, -10px);
-}
-#D4r1 {
-  transform: translate(-23px, -10px);
-}
 
-#D4l1 {
-  transform: translate(-16px, -10px);
-}
-
-#D4r2 {
-  transform: translate(-23px, -10px);
-}
 #D4operation ,#D4power{
 grid-column: 2 span;
 }

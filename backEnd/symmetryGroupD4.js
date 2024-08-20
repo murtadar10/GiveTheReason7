@@ -282,7 +282,7 @@ document.getElementById("D4operation").addEventListener("click", () => {
         document.getElementById("element3").style.display="inline-block"
         D4op[1].style.display = "inline-block";
         break;
-      case "D4heiD4pow1":
+      case "D4heipow1":
         D4currentInput = document.getElementById("element3");
         document.getElementById("element3").style.display="inline-block"
         D4op[1].style.display = "inline-block";
