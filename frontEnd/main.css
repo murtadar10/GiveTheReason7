@@ -106,10 +106,17 @@ nav#sidebar ul li a {
   border-radius: 4px;
   transition: background-color 0.3s, color 0.3s;
 }
+#sidebar.expanded {
+  width: 30%;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.7);
+}
+#sidebar.expanded ~ #content {
+  margin-left: 30%;
+}
 
 nav#sidebar ul li a:hover {
   transition: transform 0.5s ease ;
-  transform: scale(1.2);
+  transform: scale(1.05);
   width: 90%;
   backdrop-filter: blur(0);
   background-color: #0000004d;
@@ -125,6 +132,10 @@ nav#sidebar:hover {
     width: 18%;
     box-shadow: 2px 0 10px gold;
   }
+  nav#sidebar ul li a:hover {
+    transform: scale(1.2);
+  }
+
 }
 
 main#main-content {

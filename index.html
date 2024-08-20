@@ -24,7 +24,7 @@
 
   <body>
     <div class="logo-container">
-      <h1 class="logo">Eman</h1>
+      <h1 class="logo">Group Theory</h1>
     </div>
     
     <nav class="sidebar" id="sidebar">
@@ -77,7 +77,7 @@
          </div>
       </section>
 
-      <section id="normal-subgroup" class="">
+      <section id="normal-subgroup" class="hidden">
         <!-- هنا الزمرة المعيارية  -->
         <div id="Zngroup" class="Zngroup">
           <div id="ZnMain-content">
@@ -152,31 +152,31 @@
   <!--  =============================== -->
      <!-- قوس البداية -->
      <span  id="l1" class="prodect">(</span>
-     <input  type="text" id="num1" class="numbersOfCalcZn" readonly >
-     <input type="text" id="pow1" class="powersOfCalcZn" readonly > 
+     <input  type="text" id="num1" class="numbersOfCalcZn"  >
+     <input type="text" id="pow1" class="powersOfCalcZn"  > 
      
      <!-- عملية الجمع -->
      <span id="ad1" class="ad">+</span>
 
-     <input type="text" id="num2" class="numbersOfCalcZn" readonly >
-     <input type="text" id="pow2" class="powersOfCalcZn" readonly  >
+     <input type="text" id="num2" class="numbersOfCalcZn"  >
+     <input type="text" id="pow2" class="powersOfCalcZn"   >
      <span id="r1" class="prodect">)</span>
      <!-- قوس النهاية مع الأس النهائي -->
-     <input type="text" id="heipow1" class="powersOfCalcZn" readonly >
+     <input type="text" id="heipow1" class="powersOfCalcZn"  >
      <span id="ad2" class="ad" >+</span>
 
      <span  id="l2" class="prodect">(</span>
-     <input type="text" id="num3" class="numbersOfCalcZn"  readonly >
-     <input type="text" id="pow3" class="powersOfCalcZn"  readonly > 
+     <input type="text" id="num3" class="numbersOfCalcZn"   >
+     <input type="text" id="pow3" class="powersOfCalcZn"   > 
      
      <!-- عملية الجمع -->
      <span id="ad3" class="ad">+</span>
 
-     <input type="text" id="num4" class="numbersOfCalcZn" readonly >
-     <input type="text" id="pow4" class="powersOfCalcZn" readonly  >
+     <input type="text" id="num4" class="numbersOfCalcZn"  >
+     <input type="text" id="pow4" class="powersOfCalcZn"   >
      <span id="r2" class="prodect">)</span>
      <!-- قوس النهاية مع الأس النهائي -->
-     <input type="text" id="heipow2" class="powersOfCalcZn" readonly >
+     <input type="text" id="heipow2" class="powersOfCalcZn"  >
 
    
 </div>
@@ -336,22 +336,22 @@
               
                <!-- ================================ -->
               <span id="D4l1" class="bracket">(</span>
-              <input class="element" id="element1" type="text"  readonly />
-              <input class="D4pow" id="D4pow1" type="text" min="-10" readonly  />
+              <input class="element" id="element1" type="text"   />
+              <input class="D4pow" id="D4pow1" type="text" min="-10"   />
               <span class="D4op">o</span>
-              <input class="element" id="element2" type="text" readonly  />
-              <input class="D4pow" id="D4pow2" type="text" min="-10" readonly  />
+              <input class="element" id="element2" type="text"   />
+              <input class="D4pow" id="D4pow2" type="text" min="-10"   />
               <span id="D4r1" class="bracket">)</span>
-              <input class="D4pow-secondary" id="D4heipow1" type="text" min="-10"  readonly />
+              <input class="D4pow-secondary" id="D4heipow1" type="text" min="-10"   />
               <span class="D4op">o</span>
               <span id="D4l2" class="bracket">(</span>
-              <input class="element" id="element3" type="text" readonly />
-              <input class="D4pow" id="D4pow3" type="text" min="-10"  readonly />
+              <input class="element" id="element3" type="text"  />
+              <input class="D4pow" id="D4pow3" type="text" min="-10"   />
               <span class="D4op">o</span>
-              <input class="element" id="element4" type="text"  readonly />
-              <input class="D4pow" id="D4pow4" type="text" min="-10"  readonly />
+              <input class="element" id="element4" type="text"   />
+              <input class="D4pow" id="D4pow4" type="text" min="-10"   />
               <span id="D4r2" class="bracket">)</span>
-              <input class="D4pow-secondary" id="D4heipow2" type="text" min="-10"  readonly />
+              <input class="D4pow-secondary" id="D4heipow2" type="text" min="-10"   />
             </div>
             <div class="action-buttons">
               <button onclick="compose()">Compose</button>
@@ -458,10 +458,10 @@
         <div class="JordenHolder">
             <nav class="JordenHolder-nav">
                 <ul class="JordenHolder-nav">
-                    <li class="JordenHolder-menu-item" data-target="#JordenHolder-section1" data-description="Check Composition Series">Comp</li>
-                    <li class="JordenHolder-menu-item" data-target="#JordenHolder-section2" data-description="Check Solvability of a Group">Solv</li>
-                    <li class="JordenHolder-menu-item" data-target="#JordenHolder-section3" data-description="Check p-Group">P-gp</li>
-                    <li class="JordenHolder-menu-item" data-target="#JordenHolder-section4" data-description="Sylow p-Subgroup Detailed Checker">Sylow</li>
+                    <li class="JordenHolder-menu-item" data-target="#JordenHolder" data-description="Check Composition Series">Comp</li>
+                    <li class="JordenHolder-menu-item" data-target="#JordenHolder" data-description="Check Solvability of a Group">Solv</li>
+                    <li class="JordenHolder-menu-item" data-target="#JordenHolder" data-description="Check p-Group">P-gp</li>
+                    <li class="JordenHolder-menu-item" data-target="#JordenHolder" data-description="Sylow p-Subgroup Detailed Checker">Sylow</li>
                 </ul>
             </nav>
         
