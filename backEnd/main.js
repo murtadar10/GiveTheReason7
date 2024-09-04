@@ -32,6 +32,7 @@ function showSection(sectionId) {
   sections.forEach((section) => {
     if (section.id === sectionId) {
       section.classList.remove("hidden");
+      document.getElementById('front').classList.add("hidden");
     } else {
       section.classList.add("hidden");
     }

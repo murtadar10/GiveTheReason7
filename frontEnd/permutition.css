@@ -181,6 +181,7 @@
     border-top-color: rgba(255, 255, 255, 0);
     border-bottom-color: rgba(255, 255, 255, 0);
   }
+
   .Composition .power-input:focus {
     border: 0;
     outline: none;
@@ -193,7 +194,7 @@
   .Composition .permutation-input {
     font-size: 0.5em;
     margin: 0px 1%;
-    width: 5.5em;
+    width: 5.3em;
     height: 2em;
     background-color: inherit;
     border-radius: 30%;
@@ -203,6 +204,14 @@
     border-top-color: rgba(255, 255, 255, 0);
     border-bottom-color: rgba(255, 255, 255, 0);
   }
+  @media (min-width: 550px) {
+
+    .Composition .permutation-input {
+    font-size: 1em;
+      margin: 0px 1%;
+      width: 6.8em;}}
+
+
   .Composition #permutationsContainer {
     margin: 60px 0 20px;
   }

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Composition with math.js</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.6.0/math.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simplify.js@1.0.1/dist/simplify.min.js"></script>
+</head>
+<body>
+    <h1>Function Composition Calculator</h1>
+    <form id="functionForm">
+        <label for="functions">Enter functions (comma separated, e.g., "x + 2", "x * x"):</label><br>
+        <input type="text" id="functions" name="functions" size="50"><br><br>
+        <input type="button" value="Calculate Compositions" onclick="calculateCompositions()">
+    </form>
+    <div id="results"></div>
+
+    <script>
+        // تركيب دالتين مع الحفاظ على التعبير النصي
+        function compose(expr1, expr2) {
+            const composedExpr = expr1.replace(/x/g, `(${expr2})`);
+            return composedExpr;
+        }
+
+        // تبسيط التعبير إلى أبسط صورة ممكنة
+        function simplifyExpression(expr) {
+            try {
+                let simplified = math.simplify(expr).toString();
+                let previous;
+                do {
+                    previous = simplified;
+                    simplified = math.simplify(simplified).toString();
+                } while (simplified !== previous);
+
+                return simplified;
+            } catch (error) {
+                return 'Error in expression';
+            }
+        }
+
+        // إيجاد تسلسل التعبير المبسط
+        function findEquivalentFunction(simplifiedExpr, functionStrings) {
+            for (let k = 0; k < functionStrings.length; k++) {
+                const simplifiedInput = simplifyExpression(functionStrings[k]);
+                if (simplifiedExpr === simplifiedInput) {
+                    return `f${k + 1}`; // تسلسل الدالة
+                }
+            }
+            return simplifiedExpr; // لا يوجد تطابق
+        }
+
+        function calculateCompositions() {
+            const input = document.getElementById('functions').value;
+            const functionStrings = input.split(',').map(s => s.trim());
+
+            const results = [];
+            for (let i = 0; i < functionStrings.length; i++) {
+                for (let j = 0; j < functionStrings.length; j++) {
+                    const expr1 = functionStrings[i];
+                    const expr2 = functionStrings[j];
+                    const composedExpr = compose(expr1, expr2);
+                    const simplifiedExpr = simplifyExpression(composedExpr);
+                    const equivalentFunction = findEquivalentFunction(simplifiedExpr, functionStrings);
+                    results.push(
+                        `<b> f${i+1} ∘ f${j+1}:</b> f${i+1}(f${j+1}(x)) = ${composedExpr} = ${simplifiedExpr} => <b>${equivalentFunction}</b><br>` 
+                    );
+                }
+            }
+
+            document.getElementById('results').innerHTML = results.join('');
+        }
+    </script>
+</body>
+</html>

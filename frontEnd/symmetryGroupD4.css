@@ -7,6 +7,11 @@
   margin: auto;
   width: 98%;
 }
+@media (min-width: 600px) {
+  .symmetry-group-D4 {
+    width: 60%;
+  }
+}
 .symmetry-group-D4 h1 {
   font-size: 1em;
   text-align: center;

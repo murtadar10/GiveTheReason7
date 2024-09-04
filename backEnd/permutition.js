@@ -43,6 +43,8 @@ function generatePermutations() {
   const container = document.getElementById("permutations");
   const groupInfo = document.getElementById("groupInfo");
   container.innerHTML = "";
+  const OrderLawOfpermo= document.createTextNode('order Of a = lcm(L1,L2,L3,.....)')
+  container.appendChild(OrderLawOfpermo)
   groupInfo.innerHTML = `  <P id="OrderOfGrop"> Order Of Group = ${OrderGroup} </P> <strong> S${n}=</strong> { ${permutations
     .map((perm) => convertToCycles(perm))
     .join(" , ")} }`;
@@ -337,7 +339,7 @@ function calcCompoWithPow() {
     permutationOrder
   );
 
-  document.getElementById("resOfPow").innerText=`=  ${resultOfComposition}`;
+  document.getElementById("resOfPow").innerHTML=`= <P> ${firstbracket} o ${secondbracket} = </P> <P> ${resultOfComposition}</P>`;
  
 
 }

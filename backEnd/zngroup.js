@@ -122,16 +122,17 @@ function calculateZn() {
   document.getElementById(
     "groupElements"
   ).textContent = `Z${modulus} = { ${groupelements.join(", ")} }`;
-  document.getElementById(
-    "subgroups"
-  ).textContent = `Proper subgroups = { ${subgroups.join(", ")} }`;
+  document.getElementById("subgroups").textContent = `Proper subgroups = { ${subgroups.map(item => `<${item}>`).join(", ")} }`;
+
   document.getElementById(
     "AllSubgroups"
-  ).textContent = `All subgroups = { ${AllSubgroups.join(", ")} }`;
+  ).textContent = `All subgroups = { ${AllSubgroups.map(item => `<${item}>`).join(", ")} }`;
   document.getElementById(
     "generators"
-  ).textContent = `Generators = { ${generators.join(", ")} }`;
+  ).textContent = `Generators = { ${generators.map(item => `<${item}>`).join(", ")} }`;
 }
+
+
 
 // دالة لتوليد العناصر المولدة
 function gener(ele, mod) {
@@ -165,7 +166,7 @@ function allOrders() {
 
   // حساب الأوردرات
   for (let i = 0; i < groupelements.length; i++) {
-    Arryoforders.push(`Order of ${i} = ${modulus / gcd(i, modulus)}`);
+    Arryoforders.push(`Order of ${i} =  |${i}| = ${modulus}/gcd(${i},${modulus}) = ${modulus}/${gcd(i, modulus)} =  ${modulus / gcd(i, modulus)}`);
   }
 
   // حساب الزمر الجزئية
@@ -177,7 +178,8 @@ function allOrders() {
   let can2 = document.createElement("div");
   can.classList.add("can");
   can2.classList.add("can2");
-
+  let ordrLaw = document.createTextNode('Order Of a = |a| = n/gcd(a,n) =>')
+  can.appendChild(ordrLaw);
   // إنشاء العناصر للأوامر
   Arryoforders.forEach((item) => {
     let p = document.createElement("p");
