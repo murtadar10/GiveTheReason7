@@ -13,7 +13,13 @@ body {
 .logo-container {
   position: relative;
 }
-
+.front {
+  margin-top: 15% ;
+  font-family: 'Courier New', Courier, monospace;
+}
+.front img {
+  box-shadow: 0 0 30px black;
+}
 .logo {
   font-family: 'Blackletter', 'Old English Text MT', serif;
   font-size: 2em;
@@ -122,7 +128,10 @@ nav#sidebar:hover {
 }
 
 @media (max-width: 550px) {
-  
+  .front {
+    width: 180%;
+    text-align: center;
+  }
 
   #sidebar.expanded {
     width: 30%;

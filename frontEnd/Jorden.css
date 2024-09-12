@@ -173,16 +173,17 @@
   display: flex;
 }
 .JordenHolderinput {
-    margin: 5% 0;
-    width: 1em;
-    padding: 0.5em 1em;
-    font-size: 1em;
-    color: #e0e0e0;
-    background-color: #444;
-    border: 2px solid #555;
-    border-radius: 8px;
-    outline: none;
-    transition: border-color 0.3s, box-shadow 0.3s;
+  margin: 5% 0;
+  width: 2em;
+  height: 2em;
+  padding: 0.1em 0.1em;
+  font-size: 1em;
+  color: #e0e0e0;
+  background-color: #444;
+  border: 2px solid #555;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .JordenHolderinput::placeholder {

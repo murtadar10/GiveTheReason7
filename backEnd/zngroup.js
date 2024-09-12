@@ -232,14 +232,14 @@ document.getElementById("ShowResultOfZn").addEventListener("click", (e) => {
 
 
 
-document.getElementById("kellyTableZn").addEventListener("click", (e) => {
+document.getElementById("kellyTableZn").addEventListener("click", () => {
   let table = document.getElementById("kleinTable");
   if (table.style.display === "block") {
     table.style.display = "none";
-    document.getElementById("allElements").textContent = "show More";
+    document.getElementById("kellyTableZn").textContent = "show table";
   } else {
-    elems.style.display = "block";
-    document.getElementById("allElements").textContent = "show less";
+    table.style.display = "block";
+    document.getElementById("kellyTableZn").textContent = "hiden table";
   }
   kellyTableZn();  // استدعاء الدالة الصحيحة
 });
